@@ -51,7 +51,7 @@ export default function Index() {
     { icon: 'Shield', text: 'Гарантия 6 месяцев на все работы' },
     { icon: 'Clock', text: 'Работаем без выходных' },
     { icon: 'Award', text: 'Опыт 2.5 года' },
-    { icon: 'Users', text: 'Более 2000 довольных клиентов' }
+    { icon: 'Users', text: 'Более 1000 довольных клиентов' }
   ];
 
   return (
