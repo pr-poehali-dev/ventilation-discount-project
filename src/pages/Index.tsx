@@ -335,7 +335,7 @@ export default function Index() {
             
             <Card className="mb-6">
               <CardContent className="pt-6">
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center gap-6">
                   <div className="flex items-center gap-3 text-2xl font-bold text-primary">
                     <Icon name="Phone" size={32} />
                     <a href="tel:88122009519" className="hover:opacity-80 transition-opacity">
@@ -343,6 +343,14 @@ export default function Index() {
                     </a>
                   </div>
                   <p className="text-sm text-muted-foreground">Звоните с 9:00 до 22:00 без выходных</p>
+                  
+                  <div className="flex items-center gap-3 text-lg text-primary">
+                    <Icon name="Mail" size={24} />
+                    <a href="mailto:ventservisspb@bk.ru" className="hover:opacity-80 transition-opacity">
+                      ventservisspb@bk.ru
+                    </a>
+                  </div>
+                  
                   <Button size="lg" asChild className="mt-2">
                     <a href="tel:88122009519">
                       <Icon name="Phone" size={20} className="mr-2" />
