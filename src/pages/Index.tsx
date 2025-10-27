@@ -66,9 +66,9 @@ export default function Index() {
                 <p className="text-sm opacity-90">Профессиональная чистка вентиляции</p>
               </div>
             </div>
-            <a href="tel:+79991234567" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="tel:88122009519" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Icon name="Phone" size={20} />
-              <span className="font-semibold">+7 (999) 123-45-67</span>
+              <span className="font-semibold">8 (812) 200-95-19</span>
             </a>
           </div>
         </div>
@@ -289,7 +289,7 @@ export default function Index() {
               <div className="space-y-2 text-sm">
                 <p className="flex items-center gap-2">
                   <Icon name="Phone" size={16} />
-                  +7 (999) 123-45-67
+                  8 (812) 200-95-19
                 </p>
                 <p className="flex items-center gap-2">
                   <Icon name="Mail" size={16} />
