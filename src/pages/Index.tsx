@@ -297,7 +297,7 @@ export default function Index() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Icon name="MapPin" size={16} />
-                  Москва, ул. Примерная, д. 1
+                  Санкт-Петербург, ул. Блохина, д. 9, БЦ Кронверк
                 </p>
               </div>
             </div>
