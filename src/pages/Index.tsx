@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 
@@ -237,6 +238,75 @@ export default function Index() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Часто задаваемые вопросы</h2>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-card rounded-lg px-6 border-0">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  Как часто нужно чистить вентиляцию?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Рекомендуется проводить профессиональную чистку вентиляции минимум 1 раз в год. 
+                  При интенсивном использовании (кафе, рестораны) — каждые 6 месяцев.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-card rounded-lg px-6 border-0">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  Сколько времени занимает чистка вентиляции?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  В среднем работа занимает от 2 до 4 часов в зависимости от площади помещения 
+                  и степени загрязнения системы.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-card rounded-lg px-6 border-0">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  Какие документы вы предоставляете после работы?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  После выполнения работ мы предоставляем договор, акт выполненных работ, 
+                  кассовый чек и гарантийный талон на 6 месяцев.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-card rounded-lg px-6 border-0">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  Нужно ли освобождать помещение перед чисткой?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Нет, освобождать помещение не требуется. Мастера используют профессиональное 
+                  оборудование и защитные материалы, которые предотвращают загрязнение интерьера.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-card rounded-lg px-6 border-0">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  Как получить скидку для пенсионеров?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Для получения скидки 20% необходимо предъявить пенсионное удостоверение 
+                  при оформлении заказа или мастеру перед началом работ.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="bg-card rounded-lg px-6 border-0">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  Работаете ли вы в выходные дни?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Да, мы работаем без выходных с 9:00 до 22:00. Вы можете выбрать удобное 
+                  для вас время, включая субботу и воскресенье.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
