@@ -31,7 +31,7 @@ export default function Index() {
       icon: 'Droplets',
       title: 'Дезинфекция',
       description: 'Полная дезинфекция вентиляционных каналов безопасными препаратами',
-      price: 'от 1 800 ₽'
+      price: 'от 5 000 ₽'
     },
     {
       icon: 'Settings',
