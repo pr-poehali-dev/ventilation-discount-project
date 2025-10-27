@@ -25,7 +25,7 @@ export default function Index() {
       icon: 'Wind',
       title: 'Чистка вентиляции',
       description: 'Профессиональная очистка вентиляционных систем с использованием современного оборудования',
-      price: 'от 2 500 ₽'
+      price: 'от 4 000 ₽'
     },
     {
       icon: 'Droplets',
