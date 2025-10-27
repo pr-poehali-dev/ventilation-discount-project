@@ -62,7 +62,7 @@ export default function Index() {
             <div className="flex items-center gap-3">
               <Icon name="Wind" size={32} className="text-primary-foreground" />
               <div>
-                <h1 className="text-2xl font-bold">ВентСервис</h1>
+                <h1 className="text-2xl font-bold">Вент-Сервис</h1>
                 <p className="text-sm opacity-90">Профессиональная чистка вентиляции</p>
               </div>
             </div>
@@ -311,7 +311,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">ВентСервис</h3>
+              <h3 className="font-bold text-lg mb-4">Вент-Сервис</h3>
               <p className="text-sm opacity-90">
                 Профессиональная чистка и обслуживание вентиляционных систем с 2022 года
               </p>
@@ -343,7 +343,7 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm opacity-75">
-            <p>© 2024 ВентСервис. Все права защищены.</p>
+            <p>© 2024 Вент-Сервис. Все права защищены.</p>
           </div>
         </div>
       </footer>
