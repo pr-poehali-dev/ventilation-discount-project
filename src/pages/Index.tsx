@@ -304,7 +304,7 @@ export default function Index() {
             <div>
               <h3 className="font-bold text-lg mb-4">График работы</h3>
               <div className="text-sm space-y-1">
-                <p>Пн-Вс: 8:00 - 22:00</p>
+                <p>Пн-Вс: 9:00 - 22:00</p>
                 <p className="opacity-90">Без выходных и праздников</p>
                 <p className="opacity-90 mt-4">Прием заявок круглосуточно</p>
               </div>
