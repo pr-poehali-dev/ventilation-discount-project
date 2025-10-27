@@ -327,52 +327,76 @@ export default function Index() {
 
       <section id="contact" className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4">Заказать услугу</h2>
-            <p className="text-center text-muted-foreground mb-8">
-              Оставьте заявку, и мы свяжемся с вами в течение 15 минут
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">Связаться с нами</h2>
+            <p className="text-muted-foreground mb-8">
+              Позвоните нам или оставьте заявку, и мы свяжемся с вами в течение 15 минут
             </p>
-            <Card>
+            
+            <Card className="mb-6">
               <CardContent className="pt-6">
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Ваше имя</label>
-                    <Input
-                      placeholder="Иван Иванович"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                    />
+                <div className="flex flex-col items-center gap-4">
+                  <div className="flex items-center gap-3 text-2xl font-bold text-primary">
+                    <Icon name="Phone" size={32} />
+                    <a href="tel:88122009519" className="hover:opacity-80 transition-opacity">
+                      8 (812) 200-95-19
+                    </a>
                   </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Телефон</label>
-                    <Input
-                      type="tel"
-                      placeholder="+7 (___) ___-__-__"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Комментарий</label>
-                    <Textarea
-                      placeholder="Опишите вашу задачу..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={4}
-                    />
-                  </div>
-                  <Button type="submit" size="lg" className="w-full">
-                    <Icon name="Send" size={20} className="mr-2" />
-                    Отправить заявку
+                  <p className="text-sm text-muted-foreground">Звоните с 9:00 до 22:00 без выходных</p>
+                  <Button size="lg" asChild className="mt-2">
+                    <a href="tel:88122009519">
+                      <Icon name="Phone" size={20} className="mr-2" />
+                      Позвонить
+                    </a>
                   </Button>
-                  <p className="text-xs text-center text-muted-foreground">
-                    Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
-                  </p>
-                </form>
+                </div>
               </CardContent>
             </Card>
+
+            <div className="text-left">
+              <h3 className="text-xl font-semibold mb-4 text-center">Или оставьте заявку</h3>
+              <Card>
+                <CardContent className="pt-6">
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Ваше имя</label>
+                      <Input
+                        placeholder="Иван Иванович"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Телефон</label>
+                      <Input
+                        type="tel"
+                        placeholder="+7 (___) ___-__-__"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Комментарий</label>
+                      <Textarea
+                        placeholder="Опишите вашу задачу..."
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        rows={4}
+                      />
+                    </div>
+                    <Button type="submit" size="lg" className="w-full">
+                      <Icon name="Send" size={20} className="mr-2" />
+                      Отправить заявку
+                    </Button>
+                    <p className="text-xs text-center text-muted-foreground">
+                      Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                    </p>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
