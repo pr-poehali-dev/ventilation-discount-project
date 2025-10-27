@@ -135,21 +135,39 @@ export default function Index() {
 
       <section id="discount" className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-destructive/10 to-destructive/5 rounded-2xl p-8 border-2 border-destructive/20">
-            <div className="flex items-center gap-6 flex-wrap">
-              <div className="w-20 h-20 bg-destructive/20 rounded-full flex items-center justify-center text-4xl">
-                🎉
-              </div>
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold mb-3">Специальное предложение для пенсионеров</h2>
-                <p className="text-xl text-muted-foreground mb-4">
-                  Скидка <span className="text-destructive font-bold text-2xl">20%</span> на все виды услуг при предъявлении пенсионного удостоверения
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  * Акция действует постоянно. Скидка не суммируется с другими предложениями.
-                </p>
+          <h2 className="text-3xl font-bold text-center mb-12">Специальные скидки</h2>
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="bg-gradient-to-r from-destructive/10 to-destructive/5 rounded-2xl p-8 border-2 border-destructive/20">
+              <div className="flex items-center gap-6 flex-wrap">
+                <div className="w-20 h-20 bg-destructive/20 rounded-full flex items-center justify-center text-4xl">
+                  🎉
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-3">Для пенсионеров</h3>
+                  <p className="text-xl text-muted-foreground mb-2">
+                    Скидка <span className="text-destructive font-bold text-2xl">20%</span> на все виды услуг при предъявлении пенсионного удостоверения
+                  </p>
+                </div>
               </div>
             </div>
+            
+            <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-8 border-2 border-primary/20">
+              <div className="flex items-center gap-6 flex-wrap">
+                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center text-4xl">
+                  👨‍👩‍👧‍👦
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-3">Для многодетных семей</h3>
+                  <p className="text-xl text-muted-foreground mb-2">
+                    Скидка <span className="text-primary font-bold text-2xl">15%</span> на все виды услуг при предъявлении удостоверения многодетной семьи
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-sm text-center text-muted-foreground mt-6">
+              * Акции действуют постоянно. Скидки не суммируются с другими предложениями.
+            </p>
           </div>
         </div>
       </section>
