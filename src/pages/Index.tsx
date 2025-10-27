@@ -173,6 +173,125 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">Как мы работаем</h2>
+            <p className="text-xl text-center text-muted-foreground mb-12">5 простых шагов к чистому воздуху</p>
+            
+            <div className="space-y-6">
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl">
+                        📞
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Badge variant="secondary" className="text-lg px-3 py-1">1</Badge>
+                        <h3 className="text-xl font-bold">Заявка</h3>
+                      </div>
+                      <p className="text-muted-foreground">
+                        Оставить заявку вы можете через сайт или по номеру телефона. Мы свяжемся с вами в течение 15 минут.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl">
+                        🚗
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Badge variant="secondary" className="text-lg px-3 py-1">2</Badge>
+                        <h3 className="text-xl font-bold">Выезд специалиста</h3>
+                      </div>
+                      <p className="text-muted-foreground">
+                        Мастер бесплатно выезжает к вам для замера потока и влажности воздуха, а также исследует состояние вашей вентиляции.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl">
+                        💡
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Badge variant="secondary" className="text-lg px-3 py-1">3</Badge>
+                        <h3 className="text-xl font-bold">Консультация</h3>
+                      </div>
+                      <p className="text-muted-foreground">
+                        Наши мастера знают свое дело и с удовольствием проконсультируют вас по состоянию вентиляции бесплатно. Подскажем, как решить проблему с минимальными затратами времени и денег.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl">
+                        📋
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Badge variant="secondary" className="text-lg px-3 py-1">4</Badge>
+                        <h3 className="text-xl font-bold">Договор на месте</h3>
+                      </div>
+                      <p className="text-muted-foreground">
+                        Мастер компании Вент-Сервис готов к любой нештатной ситуации, так как у него большой багаж знаний и опыта, а также полный набор профессионального оборудования.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-3xl">
+                        ⚡
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Badge variant="secondary" className="text-lg px-3 py-1">5</Badge>
+                        <h3 className="text-xl font-bold">Выполнение работ</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-3">
+                        Качественное выполнение всех работ с использованием профессионального оборудования.
+                      </p>
+                      <Badge variant="destructive" className="text-base px-4 py-2">
+                        🔥 Скидка 50% при выполнении работ в день обращения!
+                      </Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
