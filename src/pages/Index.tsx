@@ -281,7 +281,7 @@ export default function Index() {
             <div>
               <h3 className="font-bold text-lg mb-4">ВентСервис</h3>
               <p className="text-sm opacity-90">
-                Профессиональная чистка и обслуживание вентиляционных систем с 2013 года
+                Профессиональная чистка и обслуживание вентиляционных систем с 2022 года
               </p>
             </div>
             <div>
