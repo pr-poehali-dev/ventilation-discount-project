@@ -306,6 +306,20 @@ export default function Index() {
                   для вас время, включая субботу и воскресенье.
                 </AccordionContent>
               </AccordionItem>
+
+              <AccordionItem value="item-7" className="bg-card rounded-lg px-6 border-0">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  Что изменится после чистки?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  <ul className="space-y-2">
+                    <li>• Улучшается качество воздуха, становится легче дышать и улучшается качество сна</li>
+                    <li>• Уменьшается влажность помещения</li>
+                    <li>• Снижается риск появления плесени, грибка и патогенных бактерий</li>
+                    <li>• Улучшается теплообмен в квартире</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
         </div>
