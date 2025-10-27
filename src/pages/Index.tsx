@@ -37,7 +37,7 @@ export default function Index() {
       icon: 'Settings',
       title: 'Диагностика системы',
       description: 'Комплексная проверка работы вентиляционной системы с выявлением проблем',
-      price: 'от 1 500 ₽'
+      price: 'Бесплатно'
     },
     {
       icon: 'Wrench',
