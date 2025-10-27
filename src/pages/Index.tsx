@@ -165,6 +165,20 @@ export default function Index() {
               </div>
             </div>
             
+            <div className="bg-gradient-to-r from-accent/10 to-accent/5 rounded-2xl p-8 border-2 border-accent/20">
+              <div className="flex items-center gap-6 flex-wrap">
+                <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center text-4xl">
+                  🎖️
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-3">Для ветеранов</h3>
+                  <p className="text-xl text-muted-foreground mb-2">
+                    Скидка <span className="text-accent font-bold text-2xl">25%</span> на все виды услуг при предъявлении ветеранского удостоверения
+                  </p>
+                </div>
+              </div>
+            </div>
+            
             <p className="text-sm text-center text-muted-foreground mt-6">
               * Акции действуют постоянно. Скидки не суммируются с другими предложениями.
             </p>
