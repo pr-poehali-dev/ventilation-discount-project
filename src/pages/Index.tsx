@@ -427,7 +427,7 @@ export default function Index() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Icon name="Mail" size={16} />
-                  info@ventservice.ru
+                  ventservisspb@bk.ru
                 </p>
                 <p className="flex items-center gap-2">
                   <Icon name="MapPin" size={16} />
