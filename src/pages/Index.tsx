@@ -277,12 +277,9 @@ export default function Index() {
                         <Badge variant="secondary" className="text-lg px-3 py-1">5</Badge>
                         <h3 className="text-xl font-bold">Выполнение работ</h3>
                       </div>
-                      <p className="text-muted-foreground mb-3">
+                      <p className="text-muted-foreground">
                         Качественное выполнение всех работ с использованием профессионального оборудования.
                       </p>
-                      <Badge variant="destructive" className="text-base px-4 py-2">
-                        🔥 Скидка 50% при выполнении работ в день обращения!
-                      </Badge>
                     </div>
                   </div>
                 </CardContent>
