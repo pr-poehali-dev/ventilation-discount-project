@@ -1,25 +1,10 @@
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Icon from '@/components/ui/icon';
-import { useToast } from '@/hooks/use-toast';
 
 export default function Index() {
-  const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время.",
-    });
-    setFormData({ name: '', phone: '', message: '' });
-  };
 
   const services = [
     {
@@ -477,50 +462,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <div className="text-left">
-              <h3 className="text-xl font-semibold mb-4 text-center">Или оставьте заявку</h3>
-              <Card>
-                <CardContent className="pt-6">
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Ваше имя</label>
-                      <Input
-                        placeholder="Иван Иванович"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Телефон</label>
-                      <Input
-                        type="tel"
-                        placeholder="+7 (___) ___-__-__"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Комментарий</label>
-                      <Textarea
-                        placeholder="Опишите вашу задачу..."
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        rows={4}
-                      />
-                    </div>
-                    <Button type="submit" size="lg" className="w-full">
-                      <Icon name="Send" size={20} className="mr-2" />
-                      Отправить заявку
-                    </Button>
-                    <p className="text-xs text-center text-muted-foreground">
-                      Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
+
           </div>
         </div>
       </section>
