@@ -18,12 +18,6 @@ export default function Index() {
       title: 'Диагностика системы',
       description: 'Комплексная проверка работы вентиляционной системы с выявлением проблем',
       price: 'Бесплатно'
-    },
-    {
-      icon: 'Wrench',
-      title: 'Ремонт вентиляции',
-      description: 'Устранение неисправностей и восстановление работоспособности системы',
-      price: 'от 3 000 ₽'
     }
   ];
 
@@ -82,7 +76,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Наши услуги</h2>
           
-          <div className="max-w-6xl mx-auto mb-16">
+          <div className="max-w-6xl mx-auto mb-16 space-y-8">
             <Card className="overflow-hidden">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-64 md:h-auto">
@@ -116,6 +110,43 @@ export default function Index() {
                     </li>
                   </ul>
                   <p className="text-3xl font-bold text-primary">от 4 000 ₽</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto md:order-2">
+                  <img 
+                    src="https://cdn.poehali.dev/files/ceb28e7e-dfb2-4721-9e1c-2e46fb95e03f.jpg" 
+                    alt="Монтаж вентиляции"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 flex flex-col justify-center md:order-1">
+                  <h3 className="text-3xl font-bold mb-4">Монтаж вентиляции</h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Установка современных вентиляционных систем любой сложности
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Проектирование системы</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Качественный монтаж</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Настройка и тестирование</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Гарантия на работы</span>
+                    </li>
+                  </ul>
+                  <p className="text-3xl font-bold text-primary">от 15 000 ₽</p>
                 </div>
               </div>
             </Card>
