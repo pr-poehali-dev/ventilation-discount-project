@@ -2,34 +2,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
-import { useState } from 'react';
 
 export default function Index() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Имитация отправки формы
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({ name: '', phone: '', service: '', message: '' });
-    
-    setTimeout(() => setSubmitSuccess(false), 3000);
-  };
 
   const services: any[] = [];
 
@@ -886,96 +861,10 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="contact" className="py-16 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4">Оставить заявку</h2>
-            <p className="text-muted-foreground text-center mb-8">
-              Заполните форму, и мы свяжемся с вами в течение 15 минут
-            </p>
-            
-            {submitSuccess && (
-              <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-center">
-                <p className="text-green-600 dark:text-green-400 font-semibold">
-                  ✓ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
-                </p>
-              </div>
-            )}
-
-            <Card>
-              <CardContent className="pt-6">
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Ваше имя *
-                    </label>
-                    <Input
-                      id="name"
-                      placeholder="Иван"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      Номер телефона *
-                    </label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+7 (999) 123-45-67"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium mb-2">
-                      Интересующая услуга
-                    </label>
-                    <Input
-                      id="service"
-                      placeholder="Чистка вентиляции"
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Комментарий
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Расскажите о вашей ситуации..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={4}
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full" 
-                    size="lg"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
+      <section id="contact" className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Или позвоните нам</h2>
+            <h2 className="text-3xl font-bold mb-4">Связаться с нами</h2>
             <p className="text-muted-foreground mb-8">
               Работаем без выходных с 8:00 до 22:00
             </p>
