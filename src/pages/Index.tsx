@@ -153,6 +153,29 @@ export default function Index() {
                 </div>
               </div>
             </div>
+
+            <div className="bg-gradient-to-r from-accent/10 to-accent/5 rounded-2xl p-8 border-2 border-accent/20">
+              <div className="flex items-center gap-6 flex-wrap">
+                <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center text-4xl">
+                  ⭐
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-3">Скидка за отзыв</h3>
+                  <p className="text-xl text-muted-foreground mb-4">
+                    Скидка <span className="text-accent font-bold text-2xl">10%</span> на следующий заказ за отзыв на Яндекс.Картах
+                  </p>
+                  <a 
+                    href="https://yandex.ru/maps/-/CLvKjZz4" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                  >
+                    <Icon name="Star" size={20} />
+                    Оставить отзыв на Яндекс.Картах
+                  </a>
+                </div>
+              </div>
+            </div>
             
             <p className="text-sm text-center text-muted-foreground mt-6">
               * Акции действуют постоянно. Скидки не суммируются с другими предложениями.
