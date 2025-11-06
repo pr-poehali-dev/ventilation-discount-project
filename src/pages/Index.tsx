@@ -6,14 +6,7 @@ import Icon from '@/components/ui/icon';
 
 export default function Index() {
 
-  const services = [
-    {
-      icon: 'Droplets',
-      title: 'Дезинфекция',
-      description: 'Полная дезинфекция вентиляционных каналов безопасными препаратами',
-      price: 'от 5 000 ₽'
-    }
-  ];
+  const services: any[] = [];
 
   const benefits = [
     { icon: 'Shield', text: 'Гарантия 6 месяцев на все работы' },
@@ -218,24 +211,46 @@ export default function Index() {
                 </div>
               </div>
             </Card>
+
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src="https://cdn.poehali.dev/files/b9f26125-2679-42b2-9817-da8173f6ede0.png" 
+                    alt="Дезинфекция"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold mb-4">Дезинфекция</h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Полная дезинфекция вентиляционных каналов безопасными препаратами и удаление плесени и грибка
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Обработка безопасными препаратами</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Удаление плесени и грибка</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Уничтожение бактерий</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Безопасность для людей и животных</span>
+                    </li>
+                  </ul>
+                  <p className="text-3xl font-bold text-primary">от 5 000 ₽</p>
+                </div>
+              </div>
+            </Card>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, idx) => (
-              <Card key={idx} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <Icon name={service.icon as any} size={32} className="text-primary" />
-                  </div>
-                  <CardTitle className="text-center">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center mb-4">{service.description}</CardDescription>
-                  <p className="text-2xl font-bold text-center text-primary">{service.price}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+
         </div>
       </section>
 
