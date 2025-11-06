@@ -577,8 +577,7 @@ export default function Index() {
                   Работаете ли вы в выходные дни?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Да, мы работаем без выходных с 9:00 до 22:00. Вы можете выбрать удобное 
-                  для вас время, включая субботу и воскресенье.
+                  Мы работаем Пн-Сб с 10:00 до 21:00. Воскресенье — выходной день.
                 </AccordionContent>
               </AccordionItem>
 
@@ -617,7 +616,7 @@ export default function Index() {
                       8 (812) 200-95-19
                     </a>
                   </div>
-                  <p className="text-sm text-muted-foreground">Звоните с 9:00 до 22:00 без выходных</p>
+                  <p className="text-sm text-muted-foreground">Звоните Пн-Сб с 10:00 до 21:00</p>
                   
                   <div className="flex items-center gap-3 text-lg text-primary">
                     <Icon name="Mail" size={24} />
@@ -670,9 +669,8 @@ export default function Index() {
             <div>
               <h3 className="font-bold text-lg mb-4">График работы</h3>
               <div className="text-sm space-y-1">
-                <p>Пн-Вс: 9:00 - 22:00</p>
-                <p className="opacity-90">Без выходных и праздников</p>
-                <p className="opacity-90 mt-4">Прием заявок круглосуточно</p>
+                <p>Пн-Сб: 10:00 - 21:00</p>
+                <p className="opacity-90">Воскресенье выходной</p>
               </div>
             </div>
           </div>
