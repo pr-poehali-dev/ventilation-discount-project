@@ -70,11 +70,14 @@ export default function Index() {
               Профессиональные услуги по обслуживанию вентиляционных систем с гарантией качества
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Badge variant="secondary" className="text-lg px-6 py-3 bg-destructive text-destructive-foreground">
-                🎉 Скидка 20% для пенсионеров
+              <Badge variant="secondary" className="text-lg px-6 py-3 bg-primary text-primary-foreground">
+                🛡️ Гарантия качества
               </Badge>
-              <Badge variant="outline" className="text-lg px-6 py-3 border-2 border-primary text-primary">
-                ✓ Гарантия 6 месяцев
+              <Badge variant="secondary" className="text-lg px-6 py-3 bg-primary text-primary-foreground">
+                ⚡ Быстрый выезд
+              </Badge>
+              <Badge variant="secondary" className="text-lg px-6 py-3 bg-destructive text-destructive-foreground">
+                💰 Скидки
               </Badge>
             </div>
           </div>
