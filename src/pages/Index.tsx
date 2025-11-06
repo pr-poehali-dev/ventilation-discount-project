@@ -10,7 +10,7 @@ export default function Index() {
 
   const benefits = [
     { icon: 'Shield', text: 'Гарантия 6 месяцев на все работы' },
-    { icon: 'Clock', text: 'Работаем без выходных' },
+    { icon: 'Calendar', text: 'Выезд день в день' },
     { icon: 'Award', text: 'Опыт 2.5 года' },
     { icon: 'Users', text: 'Более 1000 довольных клиентов' }
   ];
