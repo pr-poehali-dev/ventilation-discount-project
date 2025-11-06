@@ -332,6 +332,173 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">Отзывы клиентов</h2>
+            <p className="text-xl text-center text-muted-foreground mb-12">Что говорят о нас наши клиенты</p>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex text-yellow-500">
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Отличная работа! Мастер приехал вовремя, быстро почистил вентиляцию. Теперь в квартире стало легче дышать. Спасибо за качественную работу!"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Елена М.</p>
+                      <p className="text-sm text-muted-foreground">Санкт-Петербург</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex text-yellow-500">
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Профессиональный подход! Сделали диагностику бесплатно, объяснили все проблемы. Цены адекватные, работу выполнили качественно. Рекомендую!"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Дмитрий К.</p>
+                      <p className="text-sm text-muted-foreground">Санкт-Петербург</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex text-yellow-500">
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Очень довольна! У нас была проблема с плесенью в вентиляции. Ребята все почистили, продезинфицировали. Прошло 4 месяца - проблема не вернулась!"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Анна С.</p>
+                      <p className="text-sm text-muted-foreground">Санкт-Петербург</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex text-yellow-500">
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Обращались для установки вентиляции в новой квартире. Работу сделали быстро и качественно. Цена соответствует качеству. Буду обращаться еще!"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Александр П.</p>
+                      <p className="text-sm text-muted-foreground">Санкт-Петербург</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex text-yellow-500">
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Спасибо за скидку пенсионерам! Мастер очень вежливый, все объяснил, показал что и как работает. Цена получилась приятная со скидкой."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Валентина И.</p>
+                      <p className="text-sm text-muted-foreground">Санкт-Петербург</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex text-yellow-500">
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                      <Icon name="Star" size={20} fill="currentColor" />
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Заказывали чистку вентиляции в офисе. Работу выполнили аккуратно, не мешали сотрудникам. Результат отличный, воздух стал намного чище!"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Игорь В.</p>
+                      <p className="text-sm text-muted-foreground">Санкт-Петербург</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
