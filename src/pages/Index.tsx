@@ -146,7 +146,7 @@ export default function Index() {
                       <span>Гарантия на работы</span>
                     </li>
                   </ul>
-                  <p className="text-3xl font-bold text-primary">от 15 000 ₽</p>
+                  <p className="text-3xl font-bold text-primary">от 3 000 ₽</p>
                 </div>
               </div>
             </Card>
