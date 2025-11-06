@@ -150,6 +150,43 @@ export default function Index() {
                 </div>
               </div>
             </Card>
+
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src="https://cdn.poehali.dev/files/53b11054-d9bc-4d42-bb53-d25d74ce8797.png" 
+                    alt="Ремонт вентиляции"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold mb-4">Ремонт вентиляции</h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Восстановление работоспособности вентиляционных систем
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Диагностика неисправностей</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Замена поврежденных элементов</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Настройка системы</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Профилактическое обслуживание</span>
+                    </li>
+                  </ul>
+                  <p className="text-3xl font-bold text-primary">от 5 000 ₽</p>
+                </div>
+              </div>
+            </Card>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
