@@ -12,12 +12,6 @@ export default function Index() {
       title: 'Дезинфекция',
       description: 'Полная дезинфекция вентиляционных каналов безопасными препаратами',
       price: 'от 5 000 ₽'
-    },
-    {
-      icon: 'Settings',
-      title: 'Диагностика системы',
-      description: 'Комплексная проверка работы вентиляционной системы с выявлением проблем',
-      price: 'Бесплатно'
     }
   ];
 
@@ -184,6 +178,43 @@ export default function Index() {
                     </li>
                   </ul>
                   <p className="text-3xl font-bold text-primary">от 5 000 ₽</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto md:order-2">
+                  <img 
+                    src="https://cdn.poehali.dev/files/40ece360-e5f1-49e5-ba3d-070da71f4c75.png" 
+                    alt="Диагностика системы"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 flex flex-col justify-center md:order-1">
+                  <h3 className="text-3xl font-bold mb-4">Диагностика системы</h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Комплексная проверка работы вентиляционной системы с выявлением проблем
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Проверка всех компонентов</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Выявление скрытых проблем</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Составление отчёта</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Рекомендации по обслуживанию</span>
+                    </li>
+                  </ul>
+                  <p className="text-3xl font-bold text-primary">Бесплатно</p>
                 </div>
               </div>
             </Card>
