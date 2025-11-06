@@ -501,6 +501,59 @@ export default function Index() {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">Наши работы</h2>
+            <p className="text-xl text-center text-muted-foreground mb-12">Примеры выполненных проектов</p>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/90a7b35f-4700-406c-809f-4f0d4047a1c0.jpg"
+                    alt="Установка вентиляции в квартире"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-lg mb-2">Установка вентиляции</h3>
+                  <p className="text-sm text-muted-foreground">Современная система вентиляции в квартире</p>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/5ac02589-0968-4589-be6b-be5d3159b3e4.jpg"
+                    alt="Чистка вентиляции профессиональным оборудованием"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-lg mb-2">Профессиональная чистка</h3>
+                  <p className="text-sm text-muted-foreground">Глубокая чистка вентиляционных каналов</p>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/5cefe21e-8c1f-4c68-a84f-6fe309e39ecf.jpg"
+                    alt="Чистая вентиляционная решетка после обслуживания"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-lg mb-2">Результат работы</h3>
+                  <p className="text-sm text-muted-foreground">Идеально чистая вентиляция после обслуживания</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-4">Как мы работаем</h2>
             <p className="text-xl text-center text-muted-foreground mb-12">5 простых шагов к чистому воздуху</p>
