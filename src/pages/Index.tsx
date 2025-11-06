@@ -87,6 +87,46 @@ export default function Index() {
       <section id="services" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Наши услуги</h2>
+          
+          <div className="max-w-6xl mx-auto mb-16">
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src="https://cdn.poehali.dev/files/e4bfb201-8071-4f36-aa0d-9045b1aeb56f.jpg" 
+                    alt="Чистка вентиляции"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold mb-4">Чистка вентиляции</h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Профессиональная очистка вентиляционных систем от пыли, грязи и микроорганизмов
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Удаление всех загрязнений</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Дезинфекция системы</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Проверка работоспособности</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Гарантия качества</span>
+                    </li>
+                  </ul>
+                  <p className="text-3xl font-bold text-primary">от 4 000 ₽</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, idx) => (
               <Card key={idx} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
