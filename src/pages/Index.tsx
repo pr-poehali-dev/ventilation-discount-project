@@ -547,6 +547,48 @@ export default function Index() {
                   <p className="text-sm text-muted-foreground">Идеально чистая вентиляция после обслуживания</p>
                 </CardContent>
               </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/fb737ec6-7cdd-4a90-86ba-a27fcde43021.jpg"
+                    alt="Установка вентиляции на кухне"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-lg mb-2">Вентиляция на кухне</h3>
+                  <p className="text-sm text-muted-foreground">Монтаж системы вентиляции в квартире</p>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/f4772aaf-a52d-4e48-986d-ca6941a4a5f8.jpg"
+                    alt="Вентиляция в ванной комнате"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-lg mb-2">Вентиляция в ванной</h3>
+                  <p className="text-sm text-muted-foreground">Установка вытяжки в санузле квартиры</p>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/2fed6c2a-3911-4ce8-aebc-abe2dbb5490c.jpg"
+                    alt="Вентиляция в спальне"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-lg mb-2">Вентиляция в спальне</h3>
+                  <p className="text-sm text-muted-foreground">Приточная вентиляция для комфортного сна</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
