@@ -1,8 +1,44 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Icon from '@/components/ui/icon';
+import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+
+function AnimatedSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function Index() {
 
@@ -15,7 +51,12 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      <header className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white py-8 shadow-2xl sticky top-0 z-50 backdrop-blur-sm">
+      <motion.header 
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white py-8 shadow-2xl sticky top-0 z-50 backdrop-blur-sm"
+      >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-4">
@@ -59,22 +100,43 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-transparent to-green-100/50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 px-6 py-2 text-sm font-semibold bg-green-500 text-white border-0 shadow-lg">
-              🎯 Лучшая цена в СПб
-            </Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent leading-tight">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Badge className="mb-6 px-6 py-2 text-sm font-semibold bg-green-500 text-white border-0 shadow-lg">
+                🎯 Лучшая цена в СПб
+              </Badge>
+            </motion.div>
+            <motion.h2 
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent leading-tight"
+            >
               Чистка и дезинфекция вентиляции
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
+            </motion.h2>
+            <motion.p 
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed"
+            >
               Профессиональные услуги по обслуживанию вентиляционных систем с гарантией качества
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            </motion.p>
+            <motion.div 
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap gap-4 justify-center"
+            >
               <Badge variant="secondary" className="text-base px-8 py-4 bg-white shadow-lg border-2 border-blue-200 text-blue-700 hover:scale-105 transition-transform">
                 🛡️ Гарантия качества
               </Badge>
@@ -84,168 +146,176 @@ export default function Index() {
               <Badge variant="secondary" className="text-base px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg hover:scale-105 transition-transform">
                 💰 Скидки до 20%
               </Badge>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <section id="services" className="py-20 bg-white/70 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              Наши услуги
-            </h2>
-            <p className="text-xl text-gray-600">Полный спектр услуг для вашей вентиляции</p>
-          </div>
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                Наши услуги
+              </h2>
+              <p className="text-xl text-gray-600">Полный спектр услуг для вашей вентиляции</p>
+            </div>
+          </AnimatedSection>
           
           <div className="max-w-6xl mx-auto space-y-12">
-            <Card className="overflow-hidden shadow-2xl border-0 hover:shadow-3xl transition-shadow duration-300 rounded-3xl">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-80 md:h-auto overflow-hidden">
-                  <img 
-                    src="https://cdn.poehali.dev/files/e4bfb201-8071-4f36-aa0d-9045b1aeb56f.jpg" 
-                    alt="Чистка вентиляции"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                </div>
-                <div className="p-10 flex flex-col justify-center bg-gradient-to-br from-blue-50 to-white">
-                  <Badge className="mb-4 w-fit px-4 py-1 bg-blue-600 text-white border-0">Популярно</Badge>
-                  <h3 className="text-4xl font-bold mb-4 text-blue-900">Чистка вентиляции</h3>
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Профессиональная очистка вентиляционных систем от пыли, грязи и микроорганизмов
-                  </p>
-                  <ul className="space-y-4 mb-8">
-                    <li className="flex items-start gap-3">
-                      <div className="bg-green-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-green-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Удаление всех загрязнений</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-green-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-green-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Дезинфекция системы</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-green-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-green-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Проверка работоспособности</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-green-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-green-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Гарантия качества</span>
-                    </li>
-                  </ul>
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">от 4 000 ₽</p>
-                    <span className="text-gray-500 line-through text-xl">5 000 ₽</span>
+            <AnimatedSection delay={0.1}>
+              <Card className="overflow-hidden shadow-2xl border-0 hover:shadow-3xl transition-shadow duration-300 rounded-3xl">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative h-80 md:h-auto overflow-hidden">
+                    <img 
+                      src="https://cdn.poehali.dev/files/e4bfb201-8071-4f36-aa0d-9045b1aeb56f.jpg" 
+                      alt="Чистка вентиляции"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                  <div className="p-10 flex flex-col justify-center bg-gradient-to-br from-blue-50 to-white">
+                    <Badge className="mb-4 w-fit px-4 py-1 bg-blue-600 text-white border-0">Популярно</Badge>
+                    <h3 className="text-4xl font-bold mb-4 text-blue-900">Чистка вентиляции</h3>
+                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                      Профессиональная очистка вентиляционных систем от пыли, грязи и микроорганизмов
+                    </p>
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-start gap-3">
+                        <div className="bg-green-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-green-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Удаление всех загрязнений</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-green-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-green-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Дезинфекция системы</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-green-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-green-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Проверка работоспособности</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-green-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-green-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Гарантия качества</span>
+                      </li>
+                    </ul>
+                    <div className="flex items-baseline gap-3">
+                      <p className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">от 4 000 ₽</p>
+                      <span className="text-gray-500 line-through text-xl">5 000 ₽</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </AnimatedSection>
 
-            <Card className="overflow-hidden shadow-2xl border-0 hover:shadow-3xl transition-shadow duration-300 rounded-3xl">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-80 md:h-auto md:order-2 overflow-hidden">
-                  <img 
-                    src="https://cdn.poehali.dev/files/ceb28e7e-dfb2-4721-9e1c-2e46fb95e03f.jpg" 
-                    alt="Монтаж вентиляции"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                </div>
-                <div className="p-10 flex flex-col justify-center md:order-1 bg-gradient-to-br from-green-50 to-white">
-                  <Badge className="mb-4 w-fit px-4 py-1 bg-green-600 text-white border-0">Под ключ</Badge>
-                  <h3 className="text-4xl font-bold mb-4 text-green-900">Монтаж вентиляции</h3>
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Установка современных вентиляционных систем любой сложности
-                  </p>
-                  <ul className="space-y-4 mb-8">
-                    <li className="flex items-start gap-3">
-                      <div className="bg-blue-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-blue-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Проектирование системы</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-blue-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-blue-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Качественный монтаж</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-blue-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-blue-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Настройка и тестирование</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-blue-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-blue-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Документация</span>
-                    </li>
-                  </ul>
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">от 15 000 ₽</p>
+            <AnimatedSection delay={0.2}>
+              <Card className="overflow-hidden shadow-2xl border-0 hover:shadow-3xl transition-shadow duration-300 rounded-3xl">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative h-80 md:h-auto md:order-2 overflow-hidden">
+                    <img 
+                      src="https://cdn.poehali.dev/files/ceb28e7e-dfb2-4721-9e1c-2e46fb95e03f.jpg" 
+                      alt="Монтаж вентиляции"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                  <div className="p-10 flex flex-col justify-center md:order-1 bg-gradient-to-br from-green-50 to-white">
+                    <Badge className="mb-4 w-fit px-4 py-1 bg-green-600 text-white border-0">Под ключ</Badge>
+                    <h3 className="text-4xl font-bold mb-4 text-green-900">Монтаж вентиляции</h3>
+                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                      Установка современных вентиляционных систем любой сложности
+                    </p>
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-start gap-3">
+                        <div className="bg-blue-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-blue-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Проектирование системы</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-blue-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-blue-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Качественный монтаж</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-blue-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-blue-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Настройка и тестирование</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-blue-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-blue-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Документация</span>
+                      </li>
+                    </ul>
+                    <div className="flex items-baseline gap-3">
+                      <p className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">от 15 000 ₽</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </AnimatedSection>
 
-            <Card className="overflow-hidden shadow-2xl border-0 hover:shadow-3xl transition-shadow duration-300 rounded-3xl">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-80 md:h-auto overflow-hidden">
-                  <img 
-                    src="https://cdn.poehali.dev/files/14d3e2ef-7b28-427f-b0c0-c30aef1c68ee.jpg" 
-                    alt="Диагностика вентиляции"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                </div>
-                <div className="p-10 flex flex-col justify-center bg-gradient-to-br from-orange-50 to-white">
-                  <Badge className="mb-4 w-fit px-4 py-1 bg-orange-600 text-white border-0">Диагностика</Badge>
-                  <h3 className="text-4xl font-bold mb-4 text-orange-900">Диагностика системы</h3>
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Полная проверка работоспособности вентиляционной системы
-                  </p>
-                  <ul className="space-y-4 mb-8">
-                    <li className="flex items-start gap-3">
-                      <div className="bg-orange-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-orange-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Измерение производительности</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-orange-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-orange-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Выявление неисправностей</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-orange-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-orange-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Рекомендации по улучшению</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-orange-100 p-1 rounded-full mt-0.5">
-                        <Icon name="Check" size={18} className="text-orange-600" />
-                      </div>
-                      <span className="text-gray-700 font-medium">Детальный отчет</span>
-                    </li>
-                  </ul>
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">от 2 500 ₽</p>
+            <AnimatedSection delay={0.3}>
+              <Card className="overflow-hidden shadow-2xl border-0 hover:shadow-3xl transition-shadow duration-300 rounded-3xl">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative h-80 md:h-auto overflow-hidden">
+                    <img 
+                      src="https://cdn.poehali.dev/files/14d3e2ef-7b28-427f-b0c0-c30aef1c68ee.jpg" 
+                      alt="Диагностика вентиляции"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                  <div className="p-10 flex flex-col justify-center bg-gradient-to-br from-orange-50 to-white">
+                    <Badge className="mb-4 w-fit px-4 py-1 bg-orange-600 text-white border-0">Диагностика</Badge>
+                    <h3 className="text-4xl font-bold mb-4 text-orange-900">Диагностика системы</h3>
+                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                      Полная проверка работоспособности вентиляционной системы
+                    </p>
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-start gap-3">
+                        <div className="bg-orange-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-orange-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Измерение производительности</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-orange-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-orange-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Выявление неисправностей</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-orange-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-orange-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Рекомендации по улучшению</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="bg-orange-100 p-1 rounded-full mt-0.5">
+                          <Icon name="Check" size={18} className="text-orange-600" />
+                        </div>
+                        <span className="text-gray-700 font-medium">Детальный отчет</span>
+                      </li>
+                    </ul>
+                    <div className="flex items-baseline gap-3">
+                      <p className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">от 2 500 ₽</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -256,15 +326,19 @@ export default function Index() {
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Наши преимущества</h2>
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Наши преимущества</h2>
+          </AnimatedSection>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center p-8 border-0 bg-white/10 backdrop-blur-md shadow-2xl hover:bg-white/20 transition-all duration-300 hover:scale-105 rounded-2xl">
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Icon name={benefit.icon} size={40} className="text-white" />
-                </div>
-                <p className="text-lg font-semibold leading-relaxed">{benefit.text}</p>
-              </Card>
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <Card className="text-center p-8 border-0 bg-white/10 backdrop-blur-md shadow-2xl hover:bg-white/20 transition-all duration-300 hover:scale-105 rounded-2xl">
+                  <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <Icon name={benefit.icon} size={40} className="text-white" />
+                  </div>
+                  <p className="text-lg font-semibold leading-relaxed">{benefit.text}</p>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -272,83 +346,89 @@ export default function Index() {
 
       <section className="py-20 bg-white/70 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              Частые вопросы
-            </h2>
-            <p className="text-xl text-gray-600">Ответы на популярные вопросы наших клиентов</p>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
-                <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
-                  Как часто нужно чистить вентиляцию?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
-                  Рекомендуется проводить профессиональную чистку вентиляции не реже одного раза в год. 
-                  Для помещений с повышенной загрязненностью (кухни, производства) - каждые 6 месяцев.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="item-2" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
-                <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
-                  Сколько времени занимает чистка?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
-                  В среднем чистка вентиляционной системы занимает от 2 до 4 часов, в зависимости от 
-                  размера системы и степени загрязнения. Мы работаем быстро и качественно.
-                </AccordionContent>
-              </AccordionItem>
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                Частые вопросы
+              </h2>
+              <p className="text-xl text-gray-600">Ответы на популярные вопросы наших клиентов</p>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
+                  <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
+                    Как часто нужно чистить вентиляцию?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
+                    Рекомендуется проводить профессиональную чистку вентиляции не реже одного раза в год. 
+                    Для помещений с повышенной загрязненностью (кухни, производства) - каждые 6 месяцев.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
+                  <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
+                    Сколько времени занимает чистка?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
+                    В среднем чистка вентиляционной системы занимает от 2 до 4 часов, в зависимости от 
+                    размера системы и степени загрязнения. Мы работаем быстро и качественно.
+                  </AccordionContent>
+                </AccordionItem>
 
-              <AccordionItem value="item-3" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
-                <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
-                  Какие гарантии вы даете?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
-                  Мы предоставляем гарантию 6 месяцев на все виды работ. Если в течение гарантийного 
-                  срока возникнут проблемы по нашей вине - устраним их бесплатно.
-                </AccordionContent>
-              </AccordionItem>
+                <AccordionItem value="item-3" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
+                  <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
+                    Какие гарантии вы даете?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
+                    Мы предоставляем гарантию 6 месяцев на все виды работ. Если в течение гарантийного 
+                    срока возникнут проблемы по нашей вине - устраним их бесплатно.
+                  </AccordionContent>
+                </AccordionItem>
 
-              <AccordionItem value="item-4" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
-                <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
-                  Работаете ли вы в выходные?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
-                  Да, мы работаем без выходных. Можем приехать в удобное для вас время, 
-                  включая вечерние часы и выходные дни. Звоните, и мы подберем оптимальное время.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
+                <AccordionItem value="item-4" className="border-0 bg-white shadow-lg rounded-2xl px-6 overflow-hidden">
+                  <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6 text-blue-900">
+                    Работаете ли вы в выходные?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
+                    Да, мы работаем без выходных. Можем приехать в удобное для вас время, 
+                    включая вечерние часы и выходные дни. Звоните, и мы подберем оптимальное время.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-green-600 via-blue-500 to-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Готовы заказать услугу?</h2>
-          <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed">
-            Позвоните нам прямо сейчас или оставьте заявку, и мы свяжемся с вами в ближайшее время
-          </p>
-          <div className="flex flex-wrap gap-6 justify-center">
-            <a href="tel:88122009519">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-10 py-7 text-xl font-bold shadow-2xl rounded-2xl hover:scale-105 transition-transform">
-                <Icon name="Phone" size={24} className="mr-3" />
-                8 (812) 200-95-19
-              </Button>
-            </a>
-            <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-md text-white border-2 border-white hover:bg-white/20 px-10 py-7 text-xl font-bold shadow-2xl rounded-2xl hover:scale-105 transition-transform">
-                <Icon name="Send" size={24} className="mr-3" />
-                Написать в Telegram
-              </Button>
-            </a>
+      <AnimatedSection>
+        <section className="py-20 bg-gradient-to-br from-green-600 via-blue-500 to-blue-600 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           </div>
-        </div>
-      </section>
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Готовы заказать услугу?</h2>
+            <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed">
+              Позвоните нам прямо сейчас или оставьте заявку, и мы свяжемся с вами в ближайшее время
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a href="tel:88122009519">
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-10 py-7 text-xl font-bold shadow-2xl rounded-2xl hover:scale-105 transition-transform">
+                  <Icon name="Phone" size={24} className="mr-3" />
+                  8 (812) 200-95-19
+                </Button>
+              </a>
+              <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-md text-white border-2 border-white hover:bg-white/20 px-10 py-7 text-xl font-bold shadow-2xl rounded-2xl hover:scale-105 transition-transform">
+                  <Icon name="Send" size={24} className="mr-3" />
+                  Написать в Telegram
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
 
       <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
         <div className="container mx-auto px-4">
