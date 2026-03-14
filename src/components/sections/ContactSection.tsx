@@ -198,7 +198,7 @@ export default function ContactSection() {
 
             <div>
               <h4 className="text-white font-semibold mb-3">Режим работы</h4>
-              <p className="text-sm leading-relaxed">Ежедневно, включая выходные<br />с 9:00 до 21:00</p>
+              <p className="text-sm leading-relaxed">Ежедневно, включая выходные<br />с 10:00 до 21:00</p>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-6 text-sm text-center">
