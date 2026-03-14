@@ -93,9 +93,9 @@ export default function Index() {
                   </svg>
                 </a>
               </div>
-              <a href="tel:88122009519" className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-3 rounded-xl hover:bg-white/30 transition-all duration-300 shadow-lg font-semibold hover:scale-105">
+              <a href="tel:88122009351" className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-3 rounded-xl hover:bg-white/30 transition-all duration-300 shadow-lg font-semibold hover:scale-105">
                 <Icon name="Phone" size={22} />
-                <span className="hidden sm:inline">8 (812) 200-95-19</span>
+                <span className="hidden sm:inline">8 (812) 200-93-51</span>
               </a>
             </div>
           </div>
@@ -413,10 +413,10 @@ export default function Index() {
               Позвоните нам прямо сейчас или оставьте заявку, и мы свяжемся с вами в ближайшее время
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
-              <a href="tel:88122009519">
+              <a href="tel:88122009351">
                 <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-10 py-7 text-xl font-bold shadow-2xl rounded-2xl hover:scale-105 transition-transform">
                   <Icon name="Phone" size={24} className="mr-3" />
-                  8 (812) 200-95-19
+                  8 (812) 200-93-51
                 </Button>
               </a>
               <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer">
@@ -446,9 +446,9 @@ export default function Index() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Контакты</h4>
               <div className="space-y-3 text-gray-400">
-                <a href="tel:88122009519" className="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="tel:88122009351" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Icon name="Phone" size={18} />
-                  <span>8 (812) 200-95-19</span>
+                  <span>8 (812) 200-93-51</span>
                 </a>
                 <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Icon name="Send" size={18} />
