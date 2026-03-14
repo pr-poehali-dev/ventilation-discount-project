@@ -138,7 +138,7 @@ export default function ContactSection() {
                   8 (812) 200-93-51
                 </Button>
               </a>
-              <p className="text-gray-400 text-sm mt-6">Ежедневно с 9:00 до 21:00, без выходных</p>
+              <p className="text-gray-400 text-sm mt-6">Ежедневно с 10:00 до 21:00, без выходных</p>
             </div>
           </FadeUp>
         </div>
