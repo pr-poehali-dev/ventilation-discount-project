@@ -100,12 +100,7 @@ export default function HeroSection() {
                     Позвонить
                   </Button>
                 </a>
-                <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" variant="outline" className="border-2 border-gray-200 hover:border-gray-300 bg-white text-gray-700 px-8 py-6 text-base font-bold rounded-2xl hover:scale-105 transition-all">
-                    {TG_ICON}
-                    <span className="ml-2">Написать</span>
-                  </Button>
-                </a>
+
               </motion.div>
             </div>
 
