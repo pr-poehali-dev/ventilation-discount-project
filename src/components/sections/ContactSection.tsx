@@ -154,12 +154,6 @@ export default function ContactSection() {
                       8 (812) 200-93-51
                     </Button>
                   </a>
-                  <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" variant="outline" className="bg-white/10 border-2 border-white/40 text-white hover:bg-white/20 px-8 py-6 text-base font-bold rounded-2xl hover:scale-105 transition-all">
-                      {TG_ICON}
-                      <span className="ml-2">Telegram</span>
-                    </Button>
-                  </a>
                 </div>
               </div>
             </div>
