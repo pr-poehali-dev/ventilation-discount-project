@@ -47,7 +47,7 @@ export default function Index() {
       icon: 'Wind',
       title: 'Чистка вентиляции',
       desc: 'Удаляем пыль, грязь и микроорганизмы. Система работает как новая.',
-      price: 'от 4 000 ₽',
+      price: 'от 3 500 ₽',
       oldPrice: '5 000 ₽',
       tag: 'Популярно',
       tagColor: 'bg-blue-600',
@@ -57,7 +57,7 @@ export default function Index() {
       icon: 'Settings',
       title: 'Монтаж вентиляции',
       desc: 'Проектируем и устанавливаем системы любой сложности под ключ.',
-      price: 'от 15 000 ₽',
+      price: 'от 12 000 ₽',
       oldPrice: null,
       tag: 'Под ключ',
       tagColor: 'bg-emerald-600',
@@ -67,10 +67,10 @@ export default function Index() {
       icon: 'ScanSearch',
       title: 'Диагностика системы',
       desc: 'Полная проверка работоспособности. Детальный отчёт и рекомендации.',
-      price: 'от 2 500 ₽',
-      oldPrice: null,
-      tag: 'Быстро',
-      tagColor: 'bg-amber-500',
+      price: 'Бесплатно',
+      oldPrice: '2 500 ₽',
+      tag: 'Бесплатно',
+      tagColor: 'bg-green-500',
       img: 'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/a6a198a4-4c90-4ec1-b635-3f9f6d4e3871.jpg',
     },
   ];
@@ -113,7 +113,7 @@ export default function Index() {
             </div>
             <div>
               <span className="text-lg font-bold text-gray-900 tracking-tight">Вент-Сервис</span>
-              <span className="hidden sm:block text-xs text-gray-400 leading-none">Чистка вентиляции · СПб</span>
+              <span className="hidden sm:block text-xs text-gray-400 leading-none">Чистка вентиляции · СПб и Лен. область</span>
             </div>
           </div>
 
@@ -152,7 +152,7 @@ export default function Index() {
                 className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6"
               >
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                Работаем без выходных · Лучшая цена в СПб
+                Работаем без выходных · СПб и Ленинградская область
               </motion.div>
 
               <motion.h1
@@ -425,7 +425,7 @@ export default function Index() {
                 </div>
                 <span className="text-white font-bold text-lg">Вент-Сервис</span>
               </div>
-              <p className="text-sm leading-relaxed">Профессиональная чистка и обслуживание вентиляционных систем в Санкт-Петербурге.</p>
+              <p className="text-sm leading-relaxed">Профессиональная чистка и обслуживание вентиляционных систем в Санкт-Петербурге и Ленинградской области.</p>
             </div>
 
             <div>
