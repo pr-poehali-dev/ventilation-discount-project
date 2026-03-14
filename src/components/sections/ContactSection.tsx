@@ -124,16 +124,22 @@ function LeadForm() {
 export default function ContactSection() {
   return (
     <>
-      {/* FORM */}
+      {/* CALL */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <FadeUp className="text-center mb-14">
-            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Оставьте заявку</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Перезвоним за 15 минут</h2>
-            <p className="text-gray-500 mt-4 text-lg">Бесплатная консультация и диагностика</p>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <LeadForm />
+          <FadeUp>
+            <div className="max-w-2xl mx-auto text-center">
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Оставьте заявку</p>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Позвоните нам</h2>
+              <p className="text-gray-500 text-lg mb-10">Бесплатная консультация и диагностика. Приедем в день обращения.</p>
+              <a href="tel:88122009351">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-7 text-2xl font-bold rounded-2xl shadow-lg shadow-blue-200 hover:scale-105 transition-all">
+                  <Icon name="Phone" size={28} className="mr-3" />
+                  8 (812) 200-93-51
+                </Button>
+              </a>
+              <p className="text-gray-400 text-sm mt-6">Ежедневно с 9:00 до 21:00, без выходных</p>
+            </div>
           </FadeUp>
         </div>
       </section>
