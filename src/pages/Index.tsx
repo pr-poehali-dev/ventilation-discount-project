@@ -51,7 +51,7 @@ export default function Index() {
       oldPrice: '5 000 ₽',
       tag: 'Популярно',
       tagColor: 'bg-blue-600',
-      img: 'https://cdn.poehali.dev/files/e4bfb201-8071-4f36-aa0d-9045b1aeb56f.jpg',
+      img: 'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/68b4f409-6a25-49c3-a312-44814b57a052.jpg',
     },
     {
       icon: 'Settings',
@@ -61,7 +61,7 @@ export default function Index() {
       oldPrice: null,
       tag: 'Под ключ',
       tagColor: 'bg-emerald-600',
-      img: 'https://cdn.poehali.dev/files/ceb28e7e-dfb2-4721-9e1c-2e46fb95e03f.jpg',
+      img: 'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/70d1078b-a946-4575-a434-4109c63f0416.jpg',
     },
     {
       icon: 'ScanSearch',
@@ -71,7 +71,7 @@ export default function Index() {
       oldPrice: null,
       tag: 'Быстро',
       tagColor: 'bg-amber-500',
-      img: 'https://cdn.poehali.dev/files/14d3e2ef-7b28-427f-b0c0-c30aef1c68ee.jpg',
+      img: 'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/a6a198a4-4c90-4ec1-b635-3f9f6d4e3871.jpg',
     },
   ];
 
@@ -203,7 +203,7 @@ export default function Index() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl shadow-blue-100/50 aspect-[4/3]">
                 <img
-                  src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/ca308976-8970-47ce-9397-90ed7ee29358.jpg"
+                  src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/fea2f13f-400d-4a2c-a9c1-cb410b52f71e.jpg"
                   alt="Чистка вентиляции"
                   className="w-full h-full object-cover"
                 />
@@ -343,12 +343,12 @@ export default function Index() {
           <FadeUp>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {[
-                'https://cdn.poehali.dev/files/e4bfb201-8071-4f36-aa0d-9045b1aeb56f.jpg',
-                'https://cdn.poehali.dev/files/ceb28e7e-dfb2-4721-9e1c-2e46fb95e03f.jpg',
-                'https://cdn.poehali.dev/files/14d3e2ef-7b28-427f-b0c0-c30aef1c68ee.jpg',
-                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/ca308976-8970-47ce-9397-90ed7ee29358.jpg',
-                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/0d39a509-4987-4be5-b8ee-a1947567b3cd.jpg',
-                'https://cdn.poehali.dev/files/e4bfb201-8071-4f36-aa0d-9045b1aeb56f.jpg',
+                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/68b4f409-6a25-49c3-a312-44814b57a052.jpg',
+                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/70d1078b-a946-4575-a434-4109c63f0416.jpg',
+                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/a6a198a4-4c90-4ec1-b635-3f9f6d4e3871.jpg',
+                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/5f3321e7-ddf7-4a03-8ccf-7dea09e0978d.jpg',
+                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/402f65f5-e404-441b-9556-2cd1a5f2e48b.jpg',
+                'https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/files/fea2f13f-400d-4a2c-a9c1-cb410b52f71e.jpg',
               ].map((src, i) => (
                 <div key={i} className="rounded-2xl overflow-hidden aspect-square group shadow-sm hover:shadow-xl transition-all duration-300">
                   <img src={src} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
