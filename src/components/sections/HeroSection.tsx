@@ -21,14 +21,12 @@ export default function HeroSection() {
         className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm"
       >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="bg-blue-600 p-2 rounded-xl">
-              <Icon name="Wind" size={22} className="text-white" />
-            </div>
-            <div>
-              <span className="text-lg font-bold text-gray-900 tracking-tight">Вент-Сервис</span>
-              <span className="hidden sm:block text-xs text-gray-400 leading-none">Чистка вентиляции · СПб и Лен. область</span>
-            </div>
+          <div className="flex items-center">
+            <img
+              src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/bucket/bc519339-6d8d-4b89-b580-345f25af0069.jpg"
+              alt="Вент-Сервис"
+              className="h-10 w-auto object-contain"
+            />
           </div>
 
           <div className="flex items-center gap-2">
