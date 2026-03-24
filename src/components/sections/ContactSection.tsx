@@ -204,6 +204,11 @@ export default function ContactSection() {
           <div className="border-t border-gray-800 pt-6 text-sm text-center space-y-1">
             <p>© 2026 Вент-Сервис. Все права защищены.</p>
             <p className="text-gray-600">ИП Иваньков Даниил Владимирович · ИНН 781448801799 · ОГРНИП 325784700152417</p>
+            <p>
+              <a href="/privacy" className="text-gray-500 hover:text-gray-300 transition-colors underline underline-offset-2">
+                Политика конфиденциальности
+              </a>
+            </p>
           </div>
         </div>
       </footer>
