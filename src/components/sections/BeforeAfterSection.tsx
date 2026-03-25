@@ -106,6 +106,18 @@ export default function BeforeAfterSection() {
             ))}
           </div>
         </FadeUp>
+
+        <FadeUp delay={0.3}>
+          <div className="mt-10 text-center">
+            <a
+              href="#contact"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold px-8 py-4 rounded-2xl transition-colors shadow-lg shadow-blue-200"
+            >
+              Оставить заявку на чистку
+            </a>
+            <p className="mt-3 text-sm text-gray-400">Бесплатный выезд и оценка · Без предоплаты</p>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
