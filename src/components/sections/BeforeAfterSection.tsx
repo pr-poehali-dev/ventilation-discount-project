@@ -95,9 +95,9 @@ export default function BeforeAfterSection() {
         <FadeUp delay={0.2}>
           <div className="mt-12 grid grid-cols-3 gap-6 text-center">
             {[
-              { value: '500+', label: 'объектов очищено' },
-              { value: '99%', label: 'довольных клиентов' },
-              { value: '5 лет', label: 'гарантия результата' },
+              { value: '1000+', label: 'объектов очищено' },
+              { value: '100%', label: 'довольных клиентов' },
+              { value: '2,5 года', label: 'на рынке · гарантия 1 год' },
             ].map((stat, i) => (
               <div key={i} className="bg-gray-50 rounded-2xl py-6 px-4">
                 <div className="text-3xl font-bold text-blue-600 mb-1">{stat.value}</div>
