@@ -2,6 +2,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import BeforeAfterSection from '@/components/sections/BeforeAfterSection';
 import ReviewsSection from '@/components/sections/ReviewsSection';
+import ClientsSection from '@/components/sections/ClientsSection';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function Index() {
@@ -11,6 +12,7 @@ export default function Index() {
       <ServicesSection />
       <BeforeAfterSection />
       <ReviewsSection />
+      <ClientsSection />
       <ContactSection />
     </div>
   );
