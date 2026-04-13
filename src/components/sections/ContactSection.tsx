@@ -33,14 +33,27 @@ function Bitrix24Form() {
 export default function ContactSection() {
   return (
     <>
-      {/* FORM */}
-      <section className="py-24 bg-white">
+      <section id="contact" className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <FadeUp>
-            <div className="max-w-2xl mx-auto text-center mb-10">
+            <div className="max-w-2xl mx-auto text-center mb-6">
               <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Оставьте заявку</p>
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Свяжитесь с нами</h2>
               <p className="text-gray-500 text-lg">Бесплатная консультация и диагностика. Приедем в день обращения.</p>
+            </div>
+          </FadeUp>
+          <FadeUp>
+            <div className="max-w-xl mx-auto mb-8">
+              <div className="discount-pulse relative bg-gradient-to-r from-red-500 via-orange-500 to-red-500 rounded-2xl p-5 text-center text-white shadow-xl shadow-red-200/40 overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.15),transparent_60%)]" />
+                <div className="relative z-10">
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <Icon name="Percent" size={22} />
+                    <span className="text-2xl md:text-3xl font-black tracking-tight">СКИДКА 50%</span>
+                  </div>
+                  <p className="text-sm md:text-base font-medium opacity-95">только при заявке через сайт!</p>
+                </div>
+              </div>
             </div>
           </FadeUp>
           <FadeUp>

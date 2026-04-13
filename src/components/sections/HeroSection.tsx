@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { TG_ICON, VK_ICON } from '@/components/shared/animations';
+import { useState, useEffect } from 'react';
 
 const stats = [
   { value: '1000+', label: 'довольных клиентов' },
@@ -10,45 +11,125 @@ const stats = [
   { value: '24/7', label: 'поддержка' },
 ];
 
+const navLinks = [
+  { label: 'Услуги', href: '#services' },
+  { label: 'Результаты', href: '#results' },
+  { label: 'Отзывы', href: '#reviews' },
+  { label: 'Контакты', href: '#contact' },
+];
+
 export default function HeroSection() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handler, { passive: true });
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
   return (
     <>
-      {/* HEADER */}
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-md'
+            : 'bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm'
+        }`}
       >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center gap-8">
             <img
               src="https://cdn.poehali.dev/projects/a06cc673-b8dc-4a0b-9953-38ff3ec5d1ff/bucket/bc519339-6d8d-4b89-b580-345f25af0069.jpg"
               alt="Вент-Сервис"
               className="h-10 w-auto object-contain"
             />
+            <nav className="hidden lg:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
           </div>
 
           <div className="flex items-center gap-2">
             <a href="https://vk.com/ventservisspb" target="_blank" rel="noopener noreferrer"
-              className="p-2 rounded-lg text-gray-500 hover:text-blue-600 hover:bg-blue-50 transition-all" aria-label="ВКонтакте">
+              className="hidden sm:flex p-2 rounded-lg text-gray-500 hover:text-blue-600 hover:bg-blue-50 transition-all" aria-label="ВКонтакте">
               {VK_ICON}
             </a>
             <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer"
-              className="p-2 rounded-lg text-gray-500 hover:text-sky-500 hover:bg-sky-50 transition-all" aria-label="Telegram">
+              className="hidden sm:flex p-2 rounded-lg text-gray-500 hover:text-sky-500 hover:bg-sky-50 transition-all" aria-label="Telegram">
               {TG_ICON}
             </a>
             <a href="tel:88122009351"
-              className="ml-2 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all hover:scale-105 shadow-md shadow-blue-200">
+              className="ml-1 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl font-semibold text-sm transition-all hover:scale-105 shadow-md shadow-blue-200">
               <Icon name="Phone" size={16} />
               <span className="hidden sm:inline">8 (812) 200-93-51</span>
               <span className="sm:hidden">Звонок</span>
             </a>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors ml-1"
+              aria-label="Меню"
+            >
+              <Icon name={mobileOpen ? 'X' : 'Menu'} size={24} />
+            </button>
           </div>
         </div>
+
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25 }}
+              className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
+            >
+              <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <div className="flex items-center gap-3 mt-3 pt-3 border-t border-gray-100 px-4">
+                  <a href="https://vk.com/ventservisspb" target="_blank" rel="noopener noreferrer"
+                    className="p-2 rounded-lg text-gray-500 hover:text-blue-600 hover:bg-blue-50 transition-all" aria-label="ВКонтакте">
+                    {VK_ICON}
+                  </a>
+                  <a href="https://t.me/ventservisspb" target="_blank" rel="noopener noreferrer"
+                    className="p-2 rounded-lg text-gray-500 hover:text-sky-500 hover:bg-sky-50 transition-all" aria-label="Telegram">
+                    {TG_ICON}
+                  </a>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.header>
 
-      {/* HERO */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-sky-50" />
         <div className="absolute right-0 top-0 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
@@ -65,6 +146,22 @@ export default function HeroSection() {
               >
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
                 Работаем без выходных · СПб и Ленинградская область
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="mb-6"
+              >
+                <a
+                  href="#contact"
+                  className="discount-pulse inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-lg shadow-red-200/50 hover:shadow-red-300/60 hover:scale-105 transition-all cursor-pointer"
+                >
+                  <Icon name="Percent" size={18} />
+                  <span>СКИДКА 50% при заявке с сайта</span>
+                  <Icon name="ArrowRight" size={16} />
+                </a>
               </motion.div>
 
               <motion.h1
@@ -98,7 +195,12 @@ export default function HeroSection() {
                     Позвонить
                   </Button>
                 </a>
-
+                <a href="#contact">
+                  <Button size="lg" className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-6 text-base font-bold rounded-2xl shadow-lg shadow-red-200/50 hover:scale-105 transition-all">
+                    <Icon name="Gift" size={20} className="mr-2" />
+                    Заявка со скидкой 50%
+                  </Button>
+                </a>
               </motion.div>
             </div>
 
@@ -124,10 +226,13 @@ export default function HeroSection() {
                   <div className="text-xs text-gray-400">На все виды работ</div>
                 </div>
               </div>
+              <div className="absolute -top-3 -right-3 discount-pulse bg-gradient-to-br from-red-500 to-orange-500 text-white rounded-2xl shadow-xl px-4 py-2.5 text-center">
+                <div className="text-xl font-black leading-none">-50%</div>
+                <div className="text-[10px] font-semibold opacity-90 mt-0.5">с сайта</div>
+              </div>
             </motion.div>
           </div>
 
-          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

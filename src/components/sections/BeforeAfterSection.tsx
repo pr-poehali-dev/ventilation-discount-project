@@ -69,7 +69,7 @@ function Slider({ before, after }: { before: string; after: string }) {
 
 export default function BeforeAfterSection() {
   return (
-    <section className="py-20 bg-white">
+    <section id="results" className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4">
         <FadeUp>
           <div className="text-center mb-12">

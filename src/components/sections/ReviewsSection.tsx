@@ -223,7 +223,7 @@ export default function ReviewsSection() {
   };
 
   return (
-    <section className="py-20 bg-[#f7f8fa]">
+    <section id="reviews" className="py-20 bg-[#f7f8fa]">
       <div className="max-w-6xl mx-auto px-4">
         <FadeUp>
           <div className="text-center mb-12">
