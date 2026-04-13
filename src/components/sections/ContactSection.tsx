@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { FadeUp, TG_ICON } from '@/components/shared/animations';
 import { useEffect, useRef } from 'react';
+import { DiscountTimer } from '@/components/sections/HeroSection';
 
 function Bitrix24Form() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,6 +53,7 @@ export default function ContactSection() {
                     <span className="text-2xl md:text-3xl font-black tracking-tight">СКИДКА 50%</span>
                   </div>
                   <p className="text-sm md:text-base font-medium opacity-95">только при заявке через сайт!</p>
+                  <DiscountTimer />
                 </div>
               </div>
             </div>

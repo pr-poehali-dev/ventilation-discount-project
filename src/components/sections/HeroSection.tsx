@@ -4,6 +4,56 @@ import Icon from '@/components/ui/icon';
 import { TG_ICON, VK_ICON } from '@/components/shared/animations';
 import { useState, useEffect } from 'react';
 
+function useCountdown() {
+  const getTimeLeft = () => {
+    const now = new Date();
+    const end = new Date(now);
+    end.setHours(23, 59, 59, 999);
+    const diff = Math.max(0, end.getTime() - now.getTime());
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    return { h, m, s };
+  };
+  const [time, setTime] = useState(getTimeLeft);
+  useEffect(() => {
+    const id = setInterval(() => setTime(getTimeLeft()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
+function pad(n: number) {
+  return n.toString().padStart(2, '0');
+}
+
+export function DiscountTimer({ compact = false }: { compact?: boolean }) {
+  const { h, m, s } = useCountdown();
+  if (compact) {
+    return (
+      <span className="inline-flex items-center gap-1 font-mono text-sm font-bold">
+        <Icon name="Clock" size={14} />
+        {pad(h)}:{pad(m)}:{pad(s)}
+      </span>
+    );
+  }
+  return (
+    <div className="flex items-center justify-center gap-2 mt-2">
+      <Icon name="Clock" size={16} className="opacity-80" />
+      <span className="text-xs opacity-80">До конца акции:</span>
+      {[
+        { v: pad(h), l: 'ч' },
+        { v: pad(m), l: 'м' },
+        { v: pad(s), l: 'с' },
+      ].map((t) => (
+        <span key={t.l} className="bg-white/20 backdrop-blur rounded-lg px-2 py-1 font-mono text-sm font-bold">
+          {t.v}<span className="text-xs opacity-70 ml-0.5">{t.l}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 const stats = [
   { value: '1000+', label: 'довольных клиентов' },
   { value: '2.5', label: 'года опыта' },
@@ -156,11 +206,14 @@ export default function HeroSection() {
               >
                 <a
                   href="#contact"
-                  className="discount-pulse inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-lg shadow-red-200/50 hover:shadow-red-300/60 hover:scale-105 transition-all cursor-pointer"
+                  className="discount-pulse inline-flex flex-col items-center gap-1.5 bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold px-6 py-3 rounded-2xl shadow-lg shadow-red-200/50 hover:shadow-red-300/60 hover:scale-105 transition-all cursor-pointer"
                 >
-                  <Icon name="Percent" size={18} />
-                  <span>СКИДКА 50% при заявке с сайта</span>
-                  <Icon name="ArrowRight" size={16} />
+                  <span className="flex items-center gap-2">
+                    <Icon name="Percent" size={18} />
+                    СКИДКА 50% при заявке с сайта
+                    <Icon name="ArrowRight" size={16} />
+                  </span>
+                  <DiscountTimer compact />
                 </a>
               </motion.div>
 
