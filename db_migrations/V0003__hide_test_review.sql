@@ -1,0 +1,1 @@
+UPDATE reviews SET approved = FALSE WHERE name = 'Тест Тестов';
